@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.6.31, for debian-linux-gnu (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.16, for Linux (x86_64)
 --
 -- Host: localhost    Database: slackBotUser_db
 -- ------------------------------------------------------
--- Server version	5.6.31-0ubuntu0.15.10.1
+-- Server version	5.7.16-0ubuntu0.16.04.1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -26,7 +26,8 @@ CREATE TABLE `ServerInfo` (
   `userName` varchar(256) NOT NULL DEFAULT '',
   `serverAlias` varchar(256) NOT NULL DEFAULT '',
   `serverIp` varchar(256) NOT NULL DEFAULT '',
-  PRIMARY KEY (`userName`,`serverAlias`,`serverIp`)
+  UNIQUE KEY `userName` (`userName`,`serverAlias`),
+  UNIQUE KEY `userName_2` (`userName`,`serverIp`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -36,7 +37,7 @@ CREATE TABLE `ServerInfo` (
 
 LOCK TABLES `ServerInfo` WRITE;
 /*!40000 ALTER TABLE `ServerInfo` DISABLE KEYS */;
-INSERT INTO `ServerInfo` VALUES ('jignesh','my_web_server','10.10.1.21'),('jignesh','my_web_server','10.10.1.4'),('ssakpal','my_web_server','10.10.1.20'),('stongao','my_web_server','20.20.43.2');
+INSERT INTO `ServerInfo` VALUES ('saurabh_','web_server','1.2.3.4'),('saurabh_','db_server_new','1.2.3.8'),('saurabh_','db_server_new_3','1.2.3.9'),('saurabh_','new_server','172.31.31.91'),('saurabh_','fuck_me','192.168.23.4'),('saurabh_','jina','192.67.89.1');
 /*!40000 ALTER TABLE `ServerInfo` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -49,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-10-20 23:44:13
+-- Dump completed on 2016-12-01  5:55:00
